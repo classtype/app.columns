@@ -1,0 +1,39 @@
+{
+    "name": "app.columns",
+    "version": "1.0.0",
+    "description": "Модуль для построения таблиц в консоли.",
+    "contributors": [
+        {
+            "name": "Sergei",
+            "email": "classtype@mail.ru"
+        }
+    ],
+    "main": "src/app.columns.js",
+    "homepage": "http://github.com/classtype/app.columns",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/classtype/app.columns.git"
+    },
+    "bugs": {
+        "url": "http://github.com/classtype/app.columns/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/classtype/app.columns/blob/master/LICENSE"
+        }
+    ],
+    "keywords": [
+        "table",
+        "column",
+        "columns",
+        "col",
+        "cols",
+        "row",
+        "rows",
+        "console"
+    ],
+    "dependencies": {
+        "colors": "1.4.0"
+    }
+}
