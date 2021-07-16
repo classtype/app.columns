@@ -116,6 +116,27 @@ console.log(log);
 ![](https://github.com/classtype/app.columns/raw/master/examples/example5.png)
 
 
+## Пример #6
+
+```js
+const columns = require('app.columns');
+
+let log = columns([
+    ['Ошибка:', 'Не верно указан пусть к файлу или каталогу:'],
+    ['\n', '\n"/home/examples/file_no_found.js"'],
+    ['Путь:', '"/home/examples/example.js"']
+], {
+    color: ['red', 'black'],
+    align: ['right', 'left']
+});
+console.log(log);
+```
+
+Результат в консоли:
+
+![](https://github.com/classtype/app.columns/raw/master/examples/example6.png)
+
+
 ## Установка
 
 ```

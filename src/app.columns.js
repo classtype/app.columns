@@ -62,7 +62,18 @@ Columns.col = (words, config) => {
     }
     
 // Самая длинная строка
-    let maxlength = words.reduce((r,s) => r > s.length ? r : s.length, 0);
+    let maxlength = 0;
+    
+    for (let i = 0; i < words.length; i++) {
+    // Если в начале строки есть символ:"\n", то уменьшаем длину на 1
+        if (maxlength < words[i].length && words[i].substring(0, 1) == '\n') {
+            maxlength = words[i].length - 1;
+        }
+        
+        else {
+            maxlength = maxlength < words[i].length ? words[i].length : maxlength;
+        }
+    }
     
     let lines = [];
     let spaceLeft = ' ';
@@ -77,6 +88,11 @@ Columns.col = (words, config) => {
         
     // Ячейка с текстом
         else {
+        // Удаляем символ:"\n" в начале строки
+            if (words[j].substring(0, 1) == '\n') {
+                words[j] = words[j].substring(1);
+            }
+            
         // Отступ слева
             if (config.align == 'left') {
                 spaceRight = new Array(maxlength - words[j].length + 2).join(' ');
@@ -93,7 +109,9 @@ Columns.col = (words, config) => {
             );
             
         // Нижний бордер
-            lines.push(colors[bgColor](new Array(maxlength + 3).join(' ')) + breakLine);
+            if ((words[j+1]||'').substring(0, 1) != '\n') {
+                lines.push(colors[bgColor](new Array(maxlength + 3).join(' ')) + breakLine);
+            }
             j++;
         }
     }
